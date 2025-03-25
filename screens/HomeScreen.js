@@ -3,7 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet } from 'react
 
 const studySpots = [
   { id: '1', name: 'Mary & John Gray Library', rating: 4.2, image: require('../assets/LUlibrary.jpg') },
-  { id: '2', name: 'STEM Building', rating: 4.5, image: require('../assets/STEM.avif') },
+  { id: '2', name: 'STEM Building', rating: 4.5, image: require('../assets/STEM.jpg') },
   { id: '3', name: 'MAES Building', rating: 4.3, image: require('../assets/LUmaes.jpg') },
   { id: '4', name: 'Starbucks LU', rating: 3.6, image: require('../assets/StudBucks.jpg') },
 
@@ -14,7 +14,6 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>📚 Study Spots near me </Text>
-      
       <FlatList
         data={studySpots}
         keyExtractor={(item) => item.id}
