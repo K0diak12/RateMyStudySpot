@@ -24,7 +24,7 @@ export default function HomeScreen({ navigation }) {
           >
             <Image source={item.image} style={styles.image} />
             <Text style={styles.spotName}>{item.name}</Text>
-            <Text style={styles.spotRating}>⭐ {item.rating} / 5</Text>
+            <Text style={styles.spotRating}>⭐ {item.rating}</Text>
           </TouchableOpacity>
         )}
       />
@@ -66,7 +66,12 @@ const styles = StyleSheet.create({
   },
   spotRating: {
     fontSize: 14,
+    fontWeight: 'bold',
     color: '#555',
+    backgroundColor: '#fffbe3',
+    padding: 5,
+    borderRadius: 7,
+    maxWidth: 74,
   },
 });
   
