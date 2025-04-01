@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
+import { View, Text, Image, StyleSheet, FlatList, Button, TouchableOpacity } from 'react-native';
 
 const spotReview = [
-  { id: '1', reviewer: 'Gary V.', rating: 4, profileImage: '👨🏾', review: "A quiet place to study on weekends." },
-  { id: '2', reviewer: 'Ana T.', rating: 5, profileImage: '👩🏼', review: 'My go-to study space. Has everything you need to study.' },
-  { id: '3', reviewer: 'Jake S.', rating: 4, profileImage: '👨🏼' ,review: 'Best place for collaborating with your team.'  },
-  { id: '4', reviewer: 'Sarah L.', rating: 3, profileImage: '👩🏾', review: 'A bit crowded on morning yet spacious.' },
+  { id: '1', reviewer: 'Ana T.', rating: 5, profileImage: '👩🏼', review: 'My go-to study space. Has everything you need to study.' },
+  { id: '2', reviewer: 'Jake S.', rating: 4, profileImage: '👨🏼' ,review: 'Best place for collaborating with your team.'  },
+  { id: '3', reviewer: 'Sarah L.', rating: 3, profileImage: '👩🏾', review: 'A bit crowded on morning yet spacious.' },
 ];
 
 export default function StudySpotScreen({ route }) {
@@ -20,6 +19,10 @@ export default function StudySpotScreen({ route }) {
     return rating
   }
 
+  const showReviewForm = () => {
+
+  }
+
   return (
     <View style={styles.container}>
       <Image source={spot.image} style={styles.image} />
@@ -29,24 +32,29 @@ export default function StudySpotScreen({ route }) {
       </View>
       <Text style={styles.descriptionTitle}>Description</Text>
       <Text>A spacious and quiet place with plenty seating and power outlets.(Dummy Text)</Text>
-      <Text style={styles.reviewTitle}>Reviews</Text>
+      <Text style={styles.reviewTitle}>Top Reviews</Text>
       <FlatList
         data={spotReview}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <>
-            <View style={styles.reviewer}>
-              <Text style={styles.profileImage}>{item.profileImage}</Text>
-              <View>
-                <Text>{item.reviewer}</Text>
-                <Text>{getStarts(item.rating)}</Text>
-              </View>
+        <>
+          <View style={styles.reviewer}>
+            <Text style={styles.profileImage}>{item.profileImage}</Text>
+            <View>
+              <Text>{item.reviewer}</Text>
+              <Text>{getStarts(item.rating)}</Text>
             </View>
-            <Text>{item.review}</Text>
-          </>
-          
+          </View>
+          <Text>{item.review}</Text>
+        </>
         )}
-        />
+      />
+      <TouchableOpacity 
+        onPress={showReviewForm()}
+        style={styles.reviewButton}
+      >
+        <Text style={styles.buttonText}>WRITE A REVIEW</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -108,6 +116,22 @@ const styles = StyleSheet.create({
   },
   profileImage: {
     fontSize: 25,
+  },
+  reviewButton: {
+    borderRadius: 10,
+    backgroundColor: '#2196F3',
+    alignItems: 'center',
+    padding: 8,
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 4,
+  },
+  buttonText: {
+    color: '#ffffff',
+    fontSize: 15,
+    fontWeight: '500'
   },
 });
   
