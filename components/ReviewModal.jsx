@@ -6,8 +6,7 @@ export default function ReviewModal ({modalVisible, setModalVisible})  {
   const [titleInput, setTitleInput] = useState('')
   const [reviewInput, setReviewInput] = useState('')
 
-  const closeModal = () => {
-    setModalVisible(false);
+  const clearModal = () => {
     setTitleInput('')
     setReviewInput('')
     setStarCount(0)
@@ -59,10 +58,12 @@ export default function ReviewModal ({modalVisible, setModalVisible})  {
               </TouchableOpacity>
             ))}
           </View>
-          <TouchableOpacity style={[styles.submitButton, titleInput == '' || reviewInput == '' || starCount == 0 ? styles.clear : styles.submit]}>
+          <TouchableOpacity 
+          style={[styles.submitButton, titleInput == '' || reviewInput == '' || starCount == 0 ? styles.clear : styles.submit]}
+          onPress={clearModal}
+          >
             <Text 
             style={styles.buttonText} 
-            onPress={closeModal}
             >{titleInput == '' || reviewInput == '' || starCount == 0 ? 'CLEAR' : 'SUBMIT'}</Text>
           </TouchableOpacity>
         </View>

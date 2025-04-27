@@ -15,8 +15,6 @@ export default function StudySpotScreen({ route }) {
 
 
   const getStarts = (rate) => {
-   
-
     return '⭐'.repeat(rate)
   }
 
@@ -54,8 +52,6 @@ export default function StudySpotScreen({ route }) {
       >
         <Text style={styles.buttonText}>WRITE A REVIEW</Text>
       </TouchableOpacity>
-
-      {/* REVIEW MODAL */}
       <ReviewModal modalVisible={modalVisible} setModalVisible={setModalVisible}/>
     </View>
   );
