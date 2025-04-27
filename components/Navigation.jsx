@@ -32,7 +32,7 @@ function BottomTabs() {
         headerShown: false ,
         tabBarIcon: () => (
           <Text style={{ fontSize: 18}}>🏠</Text>
-        )
+        ),
       }}
       />
       <Tab.Screen 
@@ -41,7 +41,8 @@ function BottomTabs() {
       options={{ 
         tabBarIcon: () => (
           <Text style={{ fontSize: 18}}>👤</Text>
-       )}} 
+       ),
+      }} 
       />
     </Tab.Navigator>
   );
