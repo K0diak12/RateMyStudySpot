@@ -1,4 +1,4 @@
-import React from 'react';
+aimport React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 export default function ProfileScreen() {
