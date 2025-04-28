@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
+
 const studySpots = [
   { id: '1', name: 'Mary & John Gray Library', rating: 4.2, image: require('../assets/LUlibrary.jpg') },
   { id: '2', name: 'STEM Building', rating: 4.5, image: require('../assets/STEM.jpg') },
